@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Profil Saya";
+$pageSubtitle = "Kelola data akun dan profil Anda";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

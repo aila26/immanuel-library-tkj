@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Tambah Penulis";
+$pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

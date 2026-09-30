@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Manajemen Pengguna";
+$pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

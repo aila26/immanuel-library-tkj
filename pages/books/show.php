@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Detail Buku";
+$pageSubtitle = "Kelola data buku, kategori, dan penulis";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

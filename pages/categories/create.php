@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Tambah Kategori";
+$pageSubtitle = "Kelola kategori untuk mengelompokkan buku";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
