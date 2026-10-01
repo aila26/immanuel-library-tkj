@@ -1,6 +1,7 @@
-<?php
-$pageTitle = "Detail Buku";
-$pageSubtitle = "Kelola data buku, kategori, dan penulis";
+<?php 
+require '../../repositories/book-repository.php';
+
+$book = getBook();
 ?>
 
 <!DOCTYPE html>
