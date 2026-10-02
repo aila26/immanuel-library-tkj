@@ -2,7 +2,7 @@
 $pageTitle = "Tambah Buku";
 $pageSubtitle = "Kelola data buku, kategori, dan penulis";
 
-$books = getBooks();
+$book = getBook();
 ?>
 
 <!DOCTYPE html>

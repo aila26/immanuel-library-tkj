@@ -2,7 +2,8 @@
 $pageTitle = "Detail Buku";
 $pageSubtitle = "Kelola data buku, kategori, dan penulis";
 
-$books = getBooks();
+require_once __DIR__ . "/../../repositories/book-repository.php";
+$book = getBook();
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +15,6 @@ $books = getBooks();
   <link rel="stylesheet" href="../../styles/books/show.css">
 </head>
 <body>
-  <?php
-  require '../../repositories/book-repository.php';
-  ?>
   <div class="app-shell">
   <?php require_once "../../components/admin/sidebar.php" ?>
 
@@ -38,8 +36,8 @@ $books = getBooks();
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
-                  <?php foreach ($book['authors'] as $author): ?>
-                    <span class="chip"><?= $author ?></span>
+                  <?php foreach ($book['authors'] as $authorName): ?>
+                    <span class="chip"><?= $authorName ?></span>
                   <?php endforeach; ?>
                 </div>
               </div>
