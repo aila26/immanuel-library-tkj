@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Edit Buku";
 $pageSubtitle = "Kelola data buku, kategori, dan penulis";
-
+require_once __DIR__ . "/../../repositories/book-repository.php";
 $book = getBook();
 ?>
 
@@ -21,7 +21,7 @@ $book = getBook();
     <?php require_once "../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="POST" action="../../actions/books/store.php">
+        <form method="GET" action="../../actions/books/update.php">
           <input type="hidden" name="id" value="<?= $book['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
@@ -76,7 +76,7 @@ $book = getBook();
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button name='update' type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>
