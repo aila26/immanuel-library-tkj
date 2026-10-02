@@ -43,6 +43,7 @@ $authors = getAuthors();
               </tr>
             </thead>
             <tbody>
+              <?php foreach($authors as $index => $author): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -58,6 +59,7 @@ $authors = getAuthors();
                   </div>
                 </td>
               </tr>
+              <?php endforeach?>
             </tbody>
           </table>
         </div>

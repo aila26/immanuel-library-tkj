@@ -44,6 +44,7 @@ $categories = getCategories();
               </tr>
             </thead>
             <tbody>
+              <?php foreach($categories as $index => $category): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -60,6 +61,7 @@ $categories = getCategories();
                   </div>
                 </td>
               </tr>
+              <?php endforeach?>
             </tbody>
           </table>
         </div>

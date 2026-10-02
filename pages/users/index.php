@@ -44,6 +44,7 @@ $users = getUsers();
               </tr>
             </thead>
             <tbody>
+              <?php foreach($users as $index => $user): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -66,6 +67,7 @@ $users = getUsers();
                   </div>
                 </td>
               </tr>
+              <?php endforeach?>
             </tbody>
           </table>
         </div>

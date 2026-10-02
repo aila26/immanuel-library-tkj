@@ -85,7 +85,7 @@ $books = getBooks();
                     <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                   </div>
                 </td>
-              </tr>1
+              </tr>
               <?php endforeach?>
             </tbody>
           </table>
