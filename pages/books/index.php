@@ -1,6 +1,9 @@
 <?php
 $pageTitle = "Manajemen Buku";
 $pageSubtitle = "Kelola data buku, kategori, dan penulis";
+
+require_once __DIR__ . "/../../repositories/book-repository.php";
+$books = getBooks();
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +58,7 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
               </tr>
             </thead>
             <tbody>
+              <?php foreach($books as $index => $book): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -69,7 +73,9 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
                 <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    <span class="chip"><?= $book['authors'] ?></span>
+                    <?php foreach($book['authors'] as $author): ?>
+                      <span class="chip"><?= $author ?></span>
+                    <?php endforeach; ?>
                   </div>
                 </td>
                 <td><?= $book['stock'] ?></td>
@@ -79,7 +85,8 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
                     <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                   </div>
                 </td>
-              </tr>
+              </tr>1
+              <?php endforeach?>
             </tbody>
           </table>
         </div>
