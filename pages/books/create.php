@@ -58,7 +58,7 @@ $book = getBook();
               <textarea id="description" name="description" rows="3" placeholder="Sinopsis singkat buku"></textarea>
             </div>
           </div>
-
+                    
           <div class="form-card">
             <div class="form-section-title">Penulis Buku</div>
             <div class="form-group">
