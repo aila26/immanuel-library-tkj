@@ -3,7 +3,7 @@
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    echo "Kategori dengan ID $id berhasil dihapus.";
+    echo "User dengan ID $id berhasil dihapus.";
 } else {
-    echo "ID kategori tidak ditemukan.";
+    echo "ID user tidak ditemukan.";
 }
