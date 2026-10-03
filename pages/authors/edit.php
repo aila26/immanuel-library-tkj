@@ -1,6 +1,9 @@
 <?php
 $pageTitle = "Edit Penulis";
 $pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
+
+require_once __DIR__ . "/../../repositories/author-repository.php";
+$author = getAuthor();
 ?>
 
 <!DOCTYPE html>
