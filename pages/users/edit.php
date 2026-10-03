@@ -1,6 +1,8 @@
 <?php
 $pageTitle = "Edit pengguna";
 $pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
+require_once __DIR__ . "/../../repositories/user-repository.php";
+$user = getUser();
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +15,7 @@ $pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
 </head>
 <body>
   <?php
-  $user = [
-      "id"    => 2,
-      "name"  => "Budi Santoso",
-      "email" => "budi.santoso@siswa.ski.sch.id",
-      "role"  => "member",
-  ];
+
   ?>
   <div class="app-shell">
   <aside class="app-sidebar">
