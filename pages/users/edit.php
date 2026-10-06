@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Edit pengguna";
+$pageTitle = "Edit Pengguna";
 $pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
 require_once __DIR__ . "/../../repositories/user-repository.php";
 $user = getUser();
