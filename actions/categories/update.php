@@ -1,4 +1,4 @@
 <?php 
-if (isset($_GET['update']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
-    print_r($_GET);
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    print_r($_POST);
 }?>

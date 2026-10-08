@@ -4,9 +4,9 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
 require_once __DIR__ . "/../../repositories/book-repository.php";
 $book = getBook();
 require_once "../../repositories/category-repository.php";
-$categories = getcategories();
+$categories = getCategories();
 require_once "../../repositories/author-repository.php";
-$authors = getauthors();
+$authors = getAuthors();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $authors = getauthors();
     <?php require_once "../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="GET" action="../../actions/books/update.php">
+        <form method="POST" action="../../actions/books/update.php">
           <input type="hidden" name="id" value="<?= $book['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
@@ -52,7 +52,7 @@ $authors = getauthors();
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
                   <?php foreach ($categories as $index => $category): ?>
-                    <option value="<?= $index + 1 ?>" <?= ($index + 1) === $book['category'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
+                    <option value="<?= $index + 1 ?>" <?= ($index + 1) === $book['category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
@@ -71,7 +71,7 @@ $authors = getauthors();
                 <?php foreach ($authors as $index => $authorName): ?>
                   <?php $authorId = $index + 1; ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['authors']) ? 'checked' : '' ?>>
+                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['author_ids']) ? 'checked' : '' ?>>
                     <?= $authorName['name'] ?>
                   </label>
                 <?php endforeach; ?>

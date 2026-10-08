@@ -21,7 +21,7 @@ $category = getCategory();
      <?php require_once "../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="GET" action="../../actions/categories/update.php">
+        <form method="POST" action="../../actions/categories/update.php">
           <input type="hidden" name="id" value="<?= $category['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>

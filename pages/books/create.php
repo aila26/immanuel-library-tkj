@@ -4,9 +4,9 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
 require_once __DIR__ . "/../../repositories/book-repository.php";
 $book = getBook();
 require_once "../../repositories/category-repository.php";
-$categories = getcategories();
+$categories = getCategories();
 require_once "../../repositories/author-repository.php";
-$authors = getauthors();
+$authors = getAuthors();
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ $authors = getauthors();
  <?php require_once "../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="get" action="../../actions/books/store.php">
+        <form method="POST" action="../../actions/books/store.php">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
             <div class="form-group">
