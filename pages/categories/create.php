@@ -1,8 +1,6 @@
 <?php
 $pageTitle = "Tambah Kategori";
-$pageSubtitle = "Kelola kategori untuk mengelompokkan buku";
-require_once __DIR__ . "/../../repositories/category-repository.php";
-$categories = getCategories();
+$pageSubtitle = "Buat kategori baru untuk mengelompokkan buku";
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +13,10 @@ $categories = getCategories();
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once "../../components/admin/sidebar.php" ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once "../../components/admin/topbar.php" ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/categories/store.php">
@@ -35,7 +33,7 @@ $categories = getCategories();
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button name='store' type="submit" class="btn btn-primary">Simpan Kategori</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Kategori</button>
             </div>
           </div>
         </form>

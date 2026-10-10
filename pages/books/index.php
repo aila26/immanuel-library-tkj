@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . "/../../repositories/book-repository.php";
+
+$books = getBooks();
+
 $pageTitle = "Manajemen Buku";
 $pageSubtitle = "Kelola data buku, kategori, dan penulis";
-
-require_once __DIR__ . "/../../repositories/book-repository.php";
-$books = getBooks();
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +19,10 @@ $books = getBooks();
 
 <body>
   <div class="app-shell">
-  <?php require_once "../../components/admin/sidebar.php" ?>
+    <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-  <?php require_once "../../components/admin/topbar.php" ?>
+      <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <div class="toolbar">
@@ -58,45 +59,38 @@ $books = getBooks();
               </tr>
             </thead>
             <tbody>
-              <?php foreach($books as $index => $book): ?>
-              <tr>
-                <td>
-                  <div class="cell-primary">
-                    <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
-                      </svg></span>
-                    <a href="show.php?id=<?= $book['id'] ?>" style="color:inherit;"><?= $book['title'] ?></a>
-                  </div>
-                </td>
-                <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
-                <td>
-                  <div class="chip-list">
-                    <?php foreach($book['authors'] as $author): ?>
-                      <span class="chip"><?= $author ?></span>
-                    <?php endforeach; ?>
-                  </div>
-                </td>
-                <td><?= $book['stock'] ?></td>
-                <td>
-                  <div class="cell-actions">
-                    <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/books/destroy.php?id=<?= $book['id'] ?>"
-                        class="btn btn-danger btn-sm"
-                        onclick="return confirm('Apakah kamu yakin ingin menghapus buku ini?')">
-                        Hapus
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <?php endforeach?>
-
-              <?php if (empty($books)): ?>
+              <?php foreach ($books as $index => $book): ?>
                 <tr>
-                  <td style="text-align: center;" colspan="5">Tidak ada data buku yang ditemukan</td>
+                  <td>
+                    <div class="cell-primary">
+                      <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+                        </svg></span>
+                      <a href="show.php?id=<?= $book['id'] ?>" style="color:inherit;"><?= $book['title'] ?></a>
+                    </div>
+                  </td>
+                  <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
+                  <td>
+                    <div class="chip-list">
+                      <?php foreach ($book['authors'] as $author): ?>
+                        <span class="chip">
+                          <?= $author ?>
+                        </span>
+                      <?php endforeach ?>
+                    </div>
+                  </td>
+                  <td><?= $book['stock'] ?></td>
+                  <td>
+                    <div class="cell-actions">
+                      <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                      <a href="../../actions/books/destroy.php?id=<?= $book['id'] ?>" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus buku ini?')">Hapus</a>
+                    </div>
+                  </td>
                 </tr>
-              <?php endif; ?>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

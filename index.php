@@ -1,5 +1,6 @@
-<?php 
-$title = "Beranda - Immanuel - Library";
+<?php
+$title = "Beranda - Immanuel Library";
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ $title = "Beranda - Immanuel - Library";
 </head>
 
 <body>
-  <?php require_once __DIR__ ."/components/landing/header.php" ?>
+  <?php require_once __DIR__ . "/components/landing/header.php" ?>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -102,7 +103,7 @@ $title = "Beranda - Immanuel - Library";
       </div>
     </div>
   </section>
-  <?php require_once __DIR__ ."/components/landing/footer.php" ?>  
+  <?php require_once __DIR__ . "/components/landing/footer.php" ?>
 </body>
 
 </html>

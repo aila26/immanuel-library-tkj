@@ -1,8 +1,10 @@
 <?php
-$pageTitle = "Edit Kategori";
-$pageSubtitle = "Kelola kategori untuk mengelompokkan buku";
 require_once __DIR__ . "/../../repositories/category-repository.php";
+
 $category = getCategory();
+
+$pageTitle = "Edit Kategori";
+$pageSubtitle = "Perbarui data kategori";
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +17,10 @@ $category = getCategory();
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once "../../components/admin/sidebar.php" ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-     <?php require_once "../../components/admin/topbar.php" ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/categories/update.php">
@@ -36,7 +38,7 @@ $category = getCategory();
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button name='update' type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button type="submit" name="update" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>

@@ -1,9 +1,8 @@
 <?php
-
-if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] == "GET") {
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
     $id = $_GET['id'];
 
-    echo "User dengan ID $id berhasil dihapus.";
-} else {
-    echo "ID user tidak ditemukan.";
+    echo "Kategori dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
+
+?>

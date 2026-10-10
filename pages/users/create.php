@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Tambah Pengguna";
-$pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
+$pageSubtitle = "Buat akun pengguna baru beserta perannya";
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +13,10 @@ $pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once "../../components/admin/sidebar.php" ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once "../../components/admin/topbar.php" ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/users/store.php">
@@ -48,7 +48,7 @@ $pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button name="store" type="submit" class="btn btn-primary">Simpan Pengguna</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Pengguna</button>
             </div>
           </div>
         </form>
