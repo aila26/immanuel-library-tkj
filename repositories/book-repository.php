@@ -38,21 +38,31 @@ function getBook($id)
 {
   global $pdo;
 
-  $stmt = $pdo->prepare("SELECT * FROM books WHERE id = ?");
-  $stmt->execute([$id]);
-  $book = $stmt->fetch(PDO::FETCH_ASSOC);
+  $query = "select id, title, isbn, year, stock, description, category_id from books where id = :id";
+  $stmt = $pdo->prepare($query);
+  $stmt->execute(['id' => $id]);
 
-  $book = [
-    "id" => 5,
-    "title" => "Antologi Rasa Nusantara",
-    "isbn" => "978-602-1234-56-7",
-    "year" => 2021,
-    "stock" => 4,
-    "category_id" => 1,
-    "category" => "Fiksi",
-    "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
-    "author_ids" => [4, 5],
-    "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
-  ];
+  $book = $stmt->fetch();
+
+  if ($book) {
+    header('Location: ../../pages/books/index.php');
+    exit;
+  }
+
+  $query = "select a.id from book_author ba
+            left join authors a on ba.author_id = a.id
+            where ba.book_id = :book_id";
+
+  $stmt = $pdo->prepare($query);
+  $stmt->execute([
+    'book_id' => $book['id']
+    ]);
+
+  $authorIds = $stmt->fetchAll();
+
+
+  $book['author_ids'] = array_column($authorIds, 'id');
+
+
   return $book;
 }
